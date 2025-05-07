@@ -3,6 +3,22 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return '''
+    <h1>API ORQUESTACION FUNCIONANDO</h1>
+    <p>Bienvenido a la API REST desarrollada por Luis Puentes.</p>
+    <p>Endpoints disponibles:</p>
+    <ul>
+        <li>POST /autenticar-usuario</li>
+        <li>POST /autorizar-acceso</li>
+        <li>POST /registrar-servicio</li>
+        <li>PUT /actualizar-reglas-orquestacion</li>
+        <li>GET /informacion-servicio/&lt;id&gt;</li>
+        <li>POST /orquestar</li>
+    </ul>
+    '''
+
 servicios = []
 usuarios = {"admin": {"contrasena": "1234", "rol": "administrador"}}
 
