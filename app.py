@@ -48,4 +48,4 @@ def orquestar():
     return jsonify({"mensaje": f"serivico {servicio} orquestado con parametros {parametros}"}), 200
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT, 8000")))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
