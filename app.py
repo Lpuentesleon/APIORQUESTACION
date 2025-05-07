@@ -1,5 +1,5 @@
-import os
 from flask import Flask, jsonify, request
+import os
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ usuarios = {"admin": {"contrasena": "1234", "rol": "administrador"}}
 def autenticar():
     data = request.json
     nombre = data.get("nombre_usuario")
-    contrasena = data.get(contrasena)
+    contrasena = data.get("contrasena")
     if nombre in usuarios and usuarios[nombre]["contrasena"] == contrasena:
         return jsonify({"token": "token_valido", "rol": usuarios[nombre]["rol"]})
     return jsonify({"error": "credenciales invalidas"}), 401
@@ -24,7 +24,7 @@ def autorizar():
         return jsonify({"autorizado": True})
     return jsonify({"autorizado": False}), 403
 
-@app.route('/registrar-serrvicio', methods=['POST'])
+@app.route('/registrar-servicio', methods=['POST'])
 def registrar_servicio():
     data = request.json
     servicios.append(data)
@@ -35,17 +35,17 @@ def actualizar_reglas():
     return jsonify({"mensaje": "reglas de orquestacion actualizadas"}), 200
 
 @app.route('/informacion-servicio/<int:id>', methods=['GET'])
-def obtener_servicio(id):
+def obetener_servicio(id):
     if 0 <= id < len(servicios):
         return jsonify(servicios[id])
     return jsonify({"error": "servicio no encontrado"}), 404
 
 @app.route('/orquestar', methods=['POST'])
 def orquestar():
-    data = request.json
+    data = requestjson
     servicio = data.get("servicio_destino")
     parametros = data.get("parametros_adicionales")
-    return jsonify({"mensaje": f"servicio {servicio} orquestado con parametros {parametros}"}), 200
+    return jsonify({"mensaje": f"serivico {servicio} orquestado con parametros {parametros}"}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8000)))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT, 8000")))

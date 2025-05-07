@@ -1,12 +1,12 @@
-# API REST - Orquestación
+# APIORQUESTACION
 
-esta API simula la orquestacion de servicios RESTful para una empresa logistica, contiene autenticacion, autorizacion y simulacion de ejecucion de servicios
+API REST de orquestación de servicios para Logística Global.
 
 ## Endpoints
 
-- `POST /autenticar-usuario`
-- `POST /autorizar-acceso`
-- `POST /registrar-servicio`
-- `PUT /actualizar-reglas-orquestacion`
-- `GET /informacion-servicio/<id>`
-- `POST /orquestar`
+- POST /autenticar-usuario
+- POST /autorizar-acceso
+- POST /registrar-servicio
+- PUT /actualizar-reglas-orquestacion
+- GET /informacion-servicio/<id>
+- POST /orquestar
